@@ -2,32 +2,26 @@
 <html>
   <head>
     <title>Have A Bright Color , &lt;3 whichlight</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800'
+rel='stylesheet' type='text/css'>
+
     <style type="text/css">
       body {margin:0; padding:0; overflow-y: hidden;} /* remove top and left whitespace */
-      canvas {margin:0 auto; display:block;}    /* remove scrollbars */
+      canvas {margin:0 auto; display:block; z-index:10}    /* remove scrollbars */
       canvas:focus {outline:0;} /* remove blue outline around canvas */
       .info{
-        font-family:Open Sans;
+        font-family:"Open Sans";
         font-weight:800;
         position:absolute;
         color:white;
         font-size:6vh;
+        z-index:2;
   width:100%;
 
-    /* Firefox */
-    display:-moz-box;
-    -moz-box-pack:center;
-    -moz-box-align:center;
 
-    /* Safari and Chrome */
-    display:-webkit-box;
-    -webkit-box-pack:center;
-    -webkit-box-align:center;
-
-    /* W3C */
-    display:box;
-    box-pack:center;
-    box-align:center;
+     display:flex;
+     align-items: center;
+       justify-content: center;
 
       }
       .container{

@@ -19,6 +19,13 @@ var setup = function(){
   el.addEventListener("touchmove", pdefault, false);
 
 
+  var el = document.getElementsByTagName("div")[0];
+  el.addEventListener("touchstart", pdefault, false);
+  el.addEventListener("touchend", pdefault, false);
+  el.addEventListener("touchcancel", pdefault, false);
+  el.addEventListener("touchleave", pdefault, false);
+  el.addEventListener("touchmove", pdefault, false);
+
   var queryHue = getParameterByName("hue");
   queryHue = parseFloat(queryHue);
   if(queryHue){
