@@ -60,7 +60,7 @@ var touchEnded= function(){
 }
 
 var updateColor = function(hue){
-  hue = hue.toFixed(4);
+  hue = hue.toFixed(0);
   bcol = color(hue,1,1);
   window.history.pushState("", "color: " + hue, "/?hue="+hue);
 }
@@ -70,6 +70,8 @@ var clicked = function(x,y){
   if(!introremove){
   var el = document.getElementsByClassName('info')[0];
   if(el){
+      el.remove();
+      el = document.getElementsByClassName('title')[0];
       el.remove();
   }
   introremove=true;
