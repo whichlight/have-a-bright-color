@@ -14,19 +14,14 @@ var setup = function(){
 
   //disable default touch events for mobile
   var el = document.getElementsByTagName("canvas")[0];
-  el.addEventListener("touchstart", pdefault, false);
-  el.addEventListener("touchend", pdefault, false);
-  el.addEventListener("touchcancel", pdefault, false);
-  el.addEventListener("touchleave", pdefault, false);
-  el.addEventListener("touchmove", pdefault, false);
+  removeDefaults(el);
 
+  var el = document.getElementsByClassName("info")[0];
+  removeDefaults(el);
 
-  var el = document.getElementsByTagName("div")[0];
-  el.addEventListener("touchstart", pdefault, false);
-  el.addEventListener("touchend", pdefault, false);
-  el.addEventListener("touchcancel", pdefault, false);
-  el.addEventListener("touchleave", pdefault, false);
-  el.addEventListener("touchmove", pdefault, false);
+  var el = document.getElementsByClassName("title")[0];
+  removeDefaults(el);
+
 
   var queryHue = getParameterByName("hue");
   queryHue = parseFloat(queryHue);
@@ -36,6 +31,15 @@ var setup = function(){
     hue = random(360);
   }
   updateColor(hue);
+}
+
+
+function removeDefaults(el){
+  el.addEventListener("touchstart", pdefault, false);
+  el.addEventListener("touchend", pdefault, false);
+  el.addEventListener("touchcancel", pdefault, false);
+  el.addEventListener("touchleave", pdefault, false);
+  el.addEventListener("touchmove", pdefault, false);
 }
 
 function windowResized() {
