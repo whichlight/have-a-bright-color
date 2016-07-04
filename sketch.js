@@ -3,6 +3,8 @@ var w;
 var bcol;
 var hue;
 
+introremove = false;
+
 
 var setup = function(){
   colorMode(HSB, 360,1,1)
@@ -64,13 +66,19 @@ var updateColor = function(hue){
 }
 
 var clicked = function(x,y){
-  hue = map(y,0,h,0,360);
-  updateColor(hue);
 
+  if(!introremove){
   var el = document.getElementsByClassName('info')[0];
   if(el){
       el.remove();
   }
+  introremove=true;
+  }
+  else{
+  hue = map(y,0,h,0,360);
+  updateColor(hue);
+  }
+
 }
 
 var draw = function(){
