@@ -59,6 +59,11 @@ var updateColor = function(hue){
 var clicked = function(x,y){
   hue = map(y,0,h,0,360);
   updateColor(hue);
+
+  var el = document.getElementsByClassName('info')[0];
+  if(el){
+      el.remove();
+  }
 }
 
 var draw = function(){
